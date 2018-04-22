@@ -18,7 +18,7 @@ class UserProfileManager(BaseUserManager):
         user = self.model(email=email, name=name)
 
         user.set_password(password)
-        using.save(using=self.db)
+        user.save(using=self.db)
 
         return user
 
